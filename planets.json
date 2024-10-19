@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Mercury",
+        "mass": "3.3011 x 10\u00b2\u00b3 kg",
+        "distance_from_sun": "46 million to 70 million km",
+        "moons": []
+    },
+    {
+        "name": "Venus",
+        "mass": "4.8675 × 10\u00b2\u2074 kg",
+        "distance_from_sun": "108 million km",
+        "moons": []
+    },
+    {
+        "name": "Earth",
+        "mass": "5.972168 × 10\u00b2\u2074 kg",
+        "distance_from_sun": "150 million km",
+        "moons": ["Moon"]
+    },
+    {
+        "name": "Mars",
+        "mass": "6.4171 × 10\u00b2\u00b3 kg",
+        "distance_from_sun": "230 million km",
+        "moons": ["Deimos", "Phobos"]
+    },
+    {
+        "name": "Jupiter",
+        "mass": "1.8982 × 10\u00b2\u2077 kg",
+        "distance_from_sun": "778 million km",
+        "moons": ["Callisto", "Europa", "Ganymede", "Io"]
+    },
+    {
+        "name": "Saturn",
+        "mass": "5.6834 × 10\u00b2\u2076 kg",
+        "distance_from_sun": "1,434 million km",
+        "moons": ["Enceladus", "Rhea", "Titan"]
+    },
+    {
+        "name": "Uranus",
+        "mass": "(8.6810 \u00b1 0.0013) × 10\u00b2\u2075 kg",
+        "distance_from_sun": "3 billion km",
+        "moons": ["Ariel", "Miranda", "Oberon", "Titania", "Umbriel"]
+    },
+    {
+        "name": "Neptune",
+        "mass": "1.02409 × 10\u00b2\u2076 kg",
+        "distance_from_sun": "4.5 billion km",
+        "moons": ["Despina","Galatea", "Naiad", "Nereid", "Thalassa", "Triton"]
+    }
+]

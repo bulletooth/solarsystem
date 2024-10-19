@@ -1,8 +1,9 @@
 from solarsystem import Planet, SolarSystem
+import json
 
 
 def main_menu():
-    solar_system = construct_solar_system()
+    solar_system = construct_solar_system('planets.json')
 
     while True:
         print("\nSolar System Information Menu:")
@@ -29,17 +30,27 @@ def main_menu():
             print("Invalid input, please enter a valid option.")
 
 
-def construct_solar_system():
+def construct_solar_system(filename):
     solar_system = SolarSystem()
 
-    solar_system.add_planet(Planet("Mercury", "3.3011 x 10\u00b2\u00b3 kg", "46 million to 70 million km", ["Mercury has no moons"]))
-    solar_system.add_planet(Planet("Venus", "4.8675 × 10\u00b2\u2074 kg", "108 million km", ["Venus has no moons"]))
-    solar_system.add_planet(Planet("Earth", "5.972168 × 10\u00b2\u2074 kg", "150 million km", ["Moon"]))
-    solar_system.add_planet(Planet("Mars", "6.4171 × 10\u00b2\u00b3 kg", "230 million km", ["Deimos", "Phobos"]))
-    solar_system.add_planet(Planet("Jupiter", "1.8982 × 10\u00b2\u2077 kg", "778 million km", ["Callisto", "Europa", "Ganymede", "Io"]))
-    solar_system.add_planet(Planet("Saturn", "5.6834 × 10\u00b2\u2076 kg", "1,434 million km", ["Enceladus", "Rhea", "Titan"]))
-    solar_system.add_planet(Planet("Uranus", "(8.6810 \u00b1 0.0013) × 10\u00b2\u2075 kg", "3 billion km", ["Ariel", "Miranda", "Oberon", "Titania", "Umbriel"]))
-    solar_system.add_planet(Planet("Neptune", "1.02409 × 10\u00b2\u2076 kg", "4.5 billion km", ["Despina","Galatea", "Naiad", "Nereid", "Thalassa", "Triton"]))
+    try:
+        with open(filename, 'r') as file:
+            data = json.load(file)
+
+            for planet_data in data:
+                name = planet_data["name"]
+                mass = planet_data["mass"]
+                distance_from_sun = planet_data["distance_from_sun"]
+                moons = planet_data["moons"]
+
+                planet = Planet(name, mass, distance_from_sun, moons)
+                solar_system.add_planet(planet)
+
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found.")
+    except json.JSONDecodeError:
+        print("Error: The file is not a valid JSON file.")
+
     return solar_system
 
 
