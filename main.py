@@ -42,8 +42,9 @@ def construct_solar_system(filename):
                 mass = planet_data["mass"]
                 distance_from_sun = planet_data["distance_from_sun"]
                 moons = planet_data["moons"]
+                moons_total = planet_data["moons_total"]
 
-                planet = Planet(name, mass, distance_from_sun, moons)
+                planet = Planet(name, mass, distance_from_sun, moons, moons_total)
                 solar_system.add_planet(planet)
 
     except FileNotFoundError:
@@ -54,8 +55,23 @@ def construct_solar_system(filename):
     return solar_system
 
 
+def validated_input(prompt):
+    i = 0
+    while i < 3:
+        request = input(prompt)
+        if not request.strip():
+            print("Input cannot be empty. Please try again.")
+        elif not request.isalpha():
+            print("Input must be a text. Please try again.")
+        else:
+            return request
+        i += 1
+    print("Returning back to main menu.")
+    main_menu()
+
+
 def planet_info(solar_system):
-    name = input("Enter the name of the planet: ")
+    name = validated_input("Enter the name of the planet: ")
     planet = solar_system.find_planet(name)
     if planet:
         print(planet)
@@ -64,16 +80,16 @@ def planet_info(solar_system):
 
 
 def planet_mass(solar_system):
-    name = input("Enter the name of the planet: ")
+    name = validated_input("Enter the name of the planet: ")
     mass = solar_system.get_planet_mass(name)
     if mass:
-        print(f"The mass of {name} is {mass}.")
+        print(f"The mass of {name} is {mass} kg.")
     else:
         print(f"{name} is not in the solar system.")
 
 
 def planet_existence(solar_system):
-    name = input("Enter the name of the planet: ")
+    name = validated_input("Enter the name of the planet: ")
     if solar_system.is_planet_in_system(name):
         print(f"Yes, {name} is in the solar system.")
     else:
@@ -81,10 +97,12 @@ def planet_existence(solar_system):
 
 
 def planet_moons(solar_system):
-    name = input("Enter the name of the planet: ")
-    moons = solar_system.get_planet_moon_count(name)
-    if moons is not None:
-        print(f"{name} has {moons} moons.")
+    name = validated_input("Enter the name of the planet: ")
+    # moons = solar_system.get_planet_moon_count(name)
+    planet = solar_system.find_planet(name)
+    if planet.moons_total is not None:
+        print(f"{planet.name} has {planet.moons_total} moons.")
+        print(f"Moons: {', '.join(planet.moons)}")
     else:
         print(f"{name} is not in the solar system.")
 

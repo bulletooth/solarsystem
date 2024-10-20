@@ -1,12 +1,13 @@
 class Planet:
-    def __init__(self, name, mass, distance_from_sun, moons):
+    def __init__(self, name, mass, distance_from_sun, moons, moons_total):
         self.name = name
         self.mass = mass
         self.distance_from_sun = distance_from_sun
         self.moons = moons
+        self.moons_total = moons_total
 
     def __str__(self):
-        return f"Planet {self.name}:\n - Mass: {self.mass}\n - Distance from Sun: {self.distance_from_sun}\n - Moons: {', '.join(self.moons)}"
+        return f"Planet {self.name}:\n - Mass: {self.mass} kg\n - Average distance from the Sun: {self.distance_from_sun} million km\n - Total count of moons: {self.moons_total}\n - Moons: {', '.join(self.moons)}"
 
     def get_mass(self):
         return self.mass
