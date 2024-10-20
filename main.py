@@ -41,10 +41,10 @@ def construct_solar_system(filename):
                 name = planet_data["name"]
                 mass = planet_data["mass"]
                 distance_from_sun = planet_data["distance_from_sun"]
-                moons = planet_data["moons"]
                 moons_total = planet_data["moons_total"]
+                moons = planet_data["moons"]
 
-                planet = Planet(name, mass, distance_from_sun, moons, moons_total)
+                planet = Planet(name, mass, distance_from_sun, moons_total, moons)
                 solar_system.add_planet(planet)
 
     except FileNotFoundError:
@@ -62,7 +62,7 @@ def validated_input(prompt):
         if not request.strip():
             print("Input cannot be empty. Please try again.")
         elif not request.isalpha():
-            print("Input must be a text. Please try again.")
+            print("Input must be a text without numbers. Please try again.")
         else:
             return request
         i += 1
@@ -76,24 +76,24 @@ def planet_info(solar_system):
     if planet:
         print(planet)
     else:
-        print(f"{name} is not in the solar system.")
+        print(f"{name.capitalize()} is not in the solar system.")
 
 
 def planet_mass(solar_system):
     name = validated_input("Enter the name of the planet: ")
     mass = solar_system.get_planet_mass(name)
     if mass:
-        print(f"The mass of {name} is {mass} kg.")
+        print(f"The mass of {name.capitalize()} is {mass} kg.")
     else:
-        print(f"{name} is not in the solar system.")
+        print(f"{name.capitalize()} is not in the solar system.")
 
 
 def planet_existence(solar_system):
     name = validated_input("Enter the name of the planet: ")
     if solar_system.is_planet_in_system(name):
-        print(f"Yes, {name} is in the solar system.")
+        print(f"Yes, {name.capitalize()} is in the solar system.")
     else:
-        print(f"No, {name} is not in the solar system.")
+        print(f"No, {name.capitalize()} is not in the solar system.")
 
 
 def planet_moons(solar_system):
@@ -104,7 +104,7 @@ def planet_moons(solar_system):
         print(f"{planet.name} has {planet.moons_total} moons.")
         print(f"Moons: {', '.join(planet.moons)}")
     else:
-        print(f"{name} is not in the solar system.")
+        print(f"{name.capitalize()} is not in the solar system.")
 
 
 if __name__ == "__main__":

@@ -3,51 +3,52 @@
     "name": "Mercury",
     "mass": "3.3011 x 10\u00b2\u00b3",
     "distance_from_sun": 57.9,
-    "moons": [],
-    "moons_total": 0
+    "moons_total": 0,
+    "moons": []
   },
   {
     "name": "Venus",
     "mass": "4.8675 × 10\u00b2\u2074",
     "distance_from_sun": 108.2,
-    "moons": [],
-    "moons_total": 0
+    "moons_total": 0,
+    "moons": []
   },
   {
     "name": "Earth",
     "mass": "5.972168 × 10\u00b2\u2074",
     "distance_from_sun": 149.6,
+    "moons_total": 1,
     "moons": [
       "Moon"
-    ],
-    "moons_total": 1
+    ]
   },
   {
     "name": "Mars",
     "mass": "6.4171 × 10\u00b2\u00b3",
     "distance_from_sun": 228,
+    "moons_total": 2,
     "moons": [
       "Deimos",
       "Phobos"
-    ],
-    "moons_total": 2
+    ]
   },
   {
     "name": "Jupiter",
     "mass": "1.8982 × 10\u00b2\u2077",
     "distance_from_sun": 778.5,
+    "moons_total": 92,
     "moons": [
       "Callisto",
       "Europa",
       "Ganymede",
       "Io"
-    ],
-    "moons_total": 92
+    ]
   },
   {
     "name": "Saturn",
     "mass": "5.6834 × 10\u00b2\u2076",
     "distance_from_sun": 1427,
+    "moons_total": 145,
     "moons": [
       "Dione",
       "Enceladus",
@@ -58,32 +59,31 @@
       "Rhea",
       "Tethys",
       "Titan"
-    ],
-    "moons_total": 145
+    ]
   },
   {
     "name": "Uranus",
     "mass": "(8.6810 \u00b1 0.0013) × 10\u00b2\u2075",
     "distance_from_sun": 2871,
+    "moons_total": 28,
     "moons": [
       "Ariel",
       "Miranda",
       "Oberon",
       "Titania",
       "Umbriel"
-    ],
-    "moons_total": 28
+    ]
   },
   {
     "name": "Neptune",
     "mass": "1.02409 × 10\u00b2\u2076",
     "distance_from_sun": 4495,
+    "moons_total": 17,
     "moons": [
       "Despina",
       "Galatea",
       "Nereid",
       "Triton"
-    ],
-    "moons_total": 17
+    ]
   }
 ]
