@@ -7,7 +7,7 @@ class Planet:
         self.moons = moons
 
     def __str__(self):
-        return f"Planet {self.name}:\n - Mass: {self.mass} kg\n - Average distance from the Sun: {self.distance_from_sun} million km\n - Total count of moons: {self.moons_total}\n - Moons: {', '.join(self.moons)}"
+        return f"Planet {self.name}:\n - Mass: {self.mass} kg\n - Average distance from the Sun: {self.distance_from_sun} million km\n - Total count of moons: {self.moons_total}\n - Moons: {', '.join(self.moons)}{" ..." if self.get_moon_count() < self.moons_total else ""}"
 
     def get_mass(self):
         return self.mass

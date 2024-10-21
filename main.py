@@ -1,9 +1,11 @@
 from solarsystem import Planet, SolarSystem
 import json
 
+FILE_PATH = 'planets.json'
+
 
 def main_menu():
-    solar_system = construct_solar_system('planets.json')
+    solar_system = construct_solar_system()
 
     while True:
         print("\nSolar System Information Menu:")
@@ -30,11 +32,11 @@ def main_menu():
             print("Invalid input, please enter a valid option.")
 
 
-def construct_solar_system(filename):
+def construct_solar_system(file=FILE_PATH):
     solar_system = SolarSystem()
 
     try:
-        with open(filename, 'r') as file:
+        with open(file, 'r') as file:
             data = json.load(file)
 
             for planet_data in data:
@@ -48,7 +50,7 @@ def construct_solar_system(filename):
                 solar_system.add_planet(planet)
 
     except FileNotFoundError:
-        print(f"Error: The file '{filename}' was not found.")
+        print(f"Error: The file '{file}' was not found.")
     except json.JSONDecodeError:
         print("Error: The file is not a valid JSON file.")
 
@@ -61,6 +63,8 @@ def validated_input(prompt):
         request = input(prompt)
         if not request.strip():
             print("Input cannot be empty. Please try again.")
+        elif len(request.split()) != 1:
+            print("Input must be a single word. Please try again.")
         elif not request.isalpha():
             print("Input must be a text without numbers. Please try again.")
         else:
@@ -101,8 +105,9 @@ def planet_moons(solar_system):
     # moons = solar_system.get_planet_moon_count(name)
     planet = solar_system.find_planet(name)
     if planet.moons_total is not None:
-        print(f"{planet.name} has {planet.moons_total} moons.")
-        print(f"Moons: {', '.join(planet.moons)}")
+        print(f"{planet.name} has {planet.moons_total} moon{"s" if planet.moons_total != 1 else ""}.")
+        if planet.moons_total > 0:
+            print(f"Moons: {', '.join(planet.moons)}{" ..." if planet.get_moon_count() < planet.moons_total else ""}")
     else:
         print(f"{name.capitalize()} is not in the solar system.")
 
