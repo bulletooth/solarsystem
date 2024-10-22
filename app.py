@@ -46,14 +46,18 @@ def button_planet_existence():
 
 def button_planet_moons():
     name = input_validation()
-    planet = solar_system.find_planet(name)
-    print_out.config(fg="black")
-    if planet.moons_total is not None:
-        print_out.config(
-            text=f"{planet.name} has {planet.moons_total} moon{"s" if planet.moons_total != 1 else ""}.\n{"Moons: " if planet.moons_total > 0 else ""}{', '.join(planet.moons)}{" ..." if planet.get_moon_count() < planet.moons_total else ""}",
-            fg="black")
-    else:
-        print_out.config(text="The planet is not in the solar system.", fg="black")
+    if name is not None:
+        planet = solar_system.find_planet(name)
+        print_out.config(fg="black")
+        if planet is not None:
+            if planet.moons_total is not None:
+                print_out.config(
+                    text=f"{planet.name} has {planet.moons_total} moon{"s" if planet.moons_total != 1 else ""}.\n{"Moons: " if planet.moons_total > 0 else ""}{', '.join(planet.moons)}{" ..." if planet.get_moon_count() < planet.moons_total else ""}",
+                    fg="black")
+            else:
+                print_out.config(text="No moons data available for this planet.", fg="black")
+        else:
+            print_out.config(text="The planet is not in the solar system.", fg="black")
 
 
 solar_system = construct_solar_system()
@@ -71,7 +75,7 @@ root.geometry(f"{width}x{height}+{x}+{y}")
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 mainframe = Frame(root)
-mainframe.grid(rowspan=6, sticky=NSEW)
+mainframe.grid(rowspan=7, sticky=NSEW)
 
 root.title("Solary System App")
 
@@ -95,8 +99,7 @@ planet_existence_button.grid(row=4)
 planet_moons_button = Button(root, text="How many moons does this planet have?", command=button_planet_moons,
                              width=30)
 planet_moons_button.grid(row=5)
-
 print_out = Label(root, height=10, wraplength=300, justify="left", anchor="n", font="Courier 14 bold",
-                  foreground="black")
-print_out.grid(row=6)
+                  foreground="black", borderwidth=2, relief="solid", width=37)
+print_out.grid(row=7, pady=10, ipady=10)
 root.mainloop()

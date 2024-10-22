@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Mercury",
+    "mass": "3.3011 x 10\u00b2\u00b3",
+    "distance_from_sun": 57.9,
+    "moons_total": 0,
+    "moons": []
+  },
+  {
+    "name": "Venus",
+    "mass": "4.8675 × 10\u00b2\u2074",
+    "distance_from_sun": 108.2,
+    "moons_total": 0,
+    "moons": []
+  },
+  {
+    "name": "Earth",
+    "mass": "5.972168 × 10\u00b2\u2074",
+    "distance_from_sun": 149.6,
+    "moons_total": 1,
+    "moons": [
+      "Moon"
+    ]
+  },
+  {
+    "name": "Mars",
+    "mass": "6.4171 × 10\u00b2\u00b3",
+    "distance_from_sun": 228,
+    "moons_total": 2,
+    "moons": [
+      "Deimos",
+      "Phobos"
+    ]
+  }
+]
