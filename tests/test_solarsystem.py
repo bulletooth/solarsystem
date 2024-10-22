@@ -137,3 +137,12 @@ class TestSolarSystem(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# References
+'''
+Mariya (2023). Testing GUI Apps - What to test? How to test it? Mini Coding Course for Beginners. Python Simplified. https://www.youtube.com/watch?v=EqJWhlC1H6k
+Mariya (2022). Python TDD Workflow - Unit Testing Code Example for Beginners. Python Simplified. https://www.youtube.com/@PythonSimplified/search
+Silveira, O.S.(2022). A Beginner’s Guide to Unit Tests in Python (2023). Dataquest Labs Inc. https://www.dataquest.io/blog/unit-tests-python/
+Python Tytorial. Python assertIsNone(). Retrieved October 21, 2024, from https://www.pythontutorial.net/python-unit-testing/python-assertisnone/
+Python Software Foundation. unittest — Unit testing framework. Retrieved October 20, 2024, from https://docs.python.org/3/library/unittest.html
+'''

@@ -114,3 +114,19 @@ def planet_moons(solar_system):
 
 if __name__ == "__main__":
     main_menu()
+
+# References
+'''
+
+Acsany, P. (2024). Working With JSON Data in Python. Real Python. https://realpython.com/python-json/
+Compart AG. Unicode. Retrieved October 14, 2024, from https://www.compart.com/en/unicode/
+Downey, A. (2012), Think Python: How to Think Like a Computer Scientist: Learning with Python 3, Greentea Press. http://www.thinkpython.com
+Gray, D (2023), Python Tutorial for Beginners (with mini-projects), free CodeCamp. https://youtu.be/qwAFL1597eM?si=1DQAWVE6F4FlF4zc 
+Mertz, J. Reading and Writing Files in Python (Guide). Real Python. Retrieved October 15, 2024, from https://realpython.com/read-write-files-python/
+Spronk, P. (2023), The Coder's Apprentice. https://www.spronck.net/pythonbook/
+Stack Overflow. Python Ternary Operator Without else. Retrieved October 16, 2024, from https://stackoverflow.com/questions/12199757/python-ternary-operator-without-else
+Stack Overflow. How do you print superscript?. Retrieved October 14, 2024, from https://stackoverflow.com/questions/8651361/how-do-you-print-superscript
+Wikipedia. Unicode subscripts and superscripts. Retrieved October 14, 2024, from https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts
+Wikipedia. Solar System. Retrieved October 14, 2024, from https://en.wikipedia.org/wiki/Solar_System
+Zaczynski, B. (2023). Serialize Your Data With Python. Real Python. https://realpython.com/python-serialize-data/
+'''

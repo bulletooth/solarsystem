@@ -104,3 +104,15 @@ print_out = Label(root, height=10, wraplength=300, justify="left", anchor="nw", 
                   foreground="black", borderwidth=2, relief="solid", width=37)
 print_out.grid(row=7, pady=10, ipady=10)
 root.mainloop()
+
+# References
+'''
+Elder, J.(2019j. Tkinter Course - Create Graphic User Interfaces in Python Tutorial. freeCodeCamp.org. https://www.youtube.com/watch?v=YXPyB4XeYLA
+Mariya (2020). Create a GUI app with Tkinter - Step by Step Tutorial. Python Simplified. https://www.youtube.com/@PythonSimplified/search
+Mark Roseman. TkDocs. Retrieved October 19, 2024, from https://tkdocs.com/tutorial/index.html
+Ramos, L. P. Build a Tic-Tac-Toe Game with Python and Tkinter. Real Python. Retrieved October 19, 2024, from https://realpython.com/tic-tac-toe-python/
+Reddit Inc. Best documentation? Retrieved October 18, 2024, from https://www.reddit.com/r/Tkinter/comments/hzl6b0/best_documentation/
+Stack Overflow. List available font families in 'tkinter'. Retrieved October 20, 2024, from https://stackoverflow.com/questions/39614027/list-available-font-families-in-tkinter
+Stack Overflow. How do I clear the text in a Label with tkinter? Retrieved October 20, 2024, from https://stackoverflow.com/questions/68678499/how-do-i-clear-the-text-in-a-label-with-tkinter
+Tutorials Point. Python - GUI Programming. Retrieved October 19, 2024, from https://www.tutorialspoint.com/python/python_gui_programming.htm
+'''
