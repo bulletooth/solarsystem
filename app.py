@@ -99,7 +99,8 @@ planet_existence_button.grid(row=4)
 planet_moons_button = Button(root, text="How many moons does this planet have?", command=button_planet_moons,
                              width=30)
 planet_moons_button.grid(row=5)
-print_out = Label(root, height=10, wraplength=300, justify="left", anchor="n", font="Courier 14 bold",
+
+print_out = Label(root, height=10, wraplength=300, justify="left", anchor="nw", font="Courier 14 bold",
                   foreground="black", borderwidth=2, relief="solid", width=37)
 print_out.grid(row=7, pady=10, ipady=10)
 root.mainloop()
